@@ -1,0 +1,47 @@
+//setup(just in case)
+void setup(){
+  pinMode(Left_p,OUTPUT);
+  pinMode(Left_n,OUTPUT);
+  pinMode(Right_p,OUTPUT);
+  pinMode(Right,n,OUTPUT);
+  pinMode(A0,INPUT);
+  pinMode(A1,INPUT);
+  pinMode(A2,INPUT);
+  pinMode(A3,INPUT);
+  pinMode(A4,INPUT);
+ }
+ 
+ //speed setup
+ void loop(){
+  int ex_right = analogRead(A0); //extreme right
+  int right = analogRead(A1);
+  int center = analogRead(A2);
+  int left = analogRead(A3);
+  int ex_left = analogRead(A4); //extreme left 
+  
+ //Straight
+  if(ex_left<700 && ex_right<700){
+    digitalWrite(Left_p, HIGH);
+    digitalWrite(Left_n, LOW);
+    digitalWrite(Right_p, HIGH);
+    digitalWrite(Right_n, LOW)
+    }
+    
+ //Left Direction
+  if(ex_left>700 && ex_right<700){
+    digitalWrite(Left_p, HIGH);
+    digitalWrite(Left_n, LOW);
+    digitalWirte(Right_p, LOW);
+    digitalWrite(Right_n, LOW);
+  }
+  
+ //Right Direction
+  if(ex_left<700 && ex_right>700){
+    digitalWrite(Left_p, LOW);
+    digitalWrite(Left_n, LOW);
+    digitalWrite(Right_p, HIGH);
+    digitalWrite(Right_n, LOW);
+  }
+  
+  
+ 
