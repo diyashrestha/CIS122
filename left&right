@@ -1,25 +1,37 @@
 #include <Arduino.h>
 
+/*
+ * Program Guide:
+ * motor1 = Front left motor
+ * motor2 = Front right motor
+ * motor3 = Back left motor
+ * motor4 = Back right motor
+ * left = Left IR sensor
+ * right = Right IR sensor
+ * AFMotor.h = Library that provides several convenience functions for programming motors
+ */
 
 #include <AFMotor.h>
-#include <iostream>
 
+//sensor name setup
 #define left A0
 #define right A1
 
+//motor setup
 AF_DCMotor motor1(1, MOTOR12_1KHZ);
 AF_DCMotor motor2(2, MOTOR12_1KHZ);
 AF_DCMotor motor3(3, MOTOR12_1KHZ);
 AF_DCMotor motor4(4, MOTOR34_1KHZ);
 
 void setup() {
-
-	  pinMode(left,INPUT);
-	  pinMode(right,INPUT);
+	//sensor setup
+	pinMode(left,INPUT);
+	pinMode(right,INPUT);
 }
 
 void loop() {
-
+	
+	//if left sensor 
 	if(digitalRead(left)!=0 && digitalRead(right)==0)
 	  {
 		motor1.run(FORWARD)
@@ -27,7 +39,7 @@ void loop() {
 		motor3.run(FORWARD)
 		motor3.setSpeed(250)
 	  }
-
+	//if right sensor
 	else if(digitalRead(left)==0 && digitalRead(right)!=0)
 	  {
 		motor2.run(FORWARD)
@@ -36,4 +48,3 @@ void loop() {
 		motor4.setSpeed(250)
 	  }
 }
-
