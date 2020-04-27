@@ -13,7 +13,7 @@ AF_DCMotor motor3(3, MOTOR12_1KHZ);
 AF_DCMotor motor4(4, MOTOR34_1KHZ);
 
 void setup() {
-	
+
 	  pinMode(left,INPUT);
 	  pinMode(right,INPUT);
 }
@@ -24,11 +24,16 @@ void loop() {
 	  {
 		motor1.run(FORWARD)
 		motor1.setSpeed(250)
+		motor3.run(FORWARD)
+		motor3.setSpeed(250)
 	  }
-	
+
 	else if(digitalRead(left)==0 && digitalRead(right)!=0)
 	  {
 		motor2.run(FORWARD)
 		motor2.setSpeed(250)
+		motor4.run(FORWARD)
+		motor4.setSpeed(250)
 	  }
 }
+
