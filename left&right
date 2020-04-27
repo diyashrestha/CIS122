@@ -9,6 +9,8 @@
  * left = Left IR sensor
  * right = Right IR sensor
  * AFMotor.h = Library that provides several convenience functions for programming motors
+ * Links used for reference and understanding:
+ * https://learn.adafruit.com/afmotor-library-reference
  */
 
 #include <AFMotor.h>
