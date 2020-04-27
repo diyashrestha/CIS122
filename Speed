@@ -6,18 +6,12 @@ void setup(){
   pinMode(Right_n,OUTPUT);
   pinMode(A0,INPUT);
   pinMode(A1,INPUT);
-  pinMode(A2,INPUT);
-  pinMode(A3,INPUT);
-  pinMode(A4,INPUT);
  }
  
  //speed setup
  void loop(){
   int ex_right = analogRead(A0); //extreme right
-  int right = analogRead(A1);
-  int center = analogRead(A2);
-  int left = analogRead(A3);
-  int ex_left = analogRead(A4); //extreme left 
+  int ex_left = analogRead(A1); //extreme left 
   
  //Straight
   if(ex_left<700 && ex_right<700){
