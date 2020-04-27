@@ -12,4 +12,4 @@ Chassis: Cardboard<br/>
 Brain: Arduino x 1<br/>
 IR Sensor:  IR Infrared Obstacle Avoidance Sensor x 2<br/>
 Motors: TT DC Gearbox Motor 3-6V Gear Motor x 4<br/>
-Wheels: Simple casters x 4<br/>
+Wheels: Simple casters with axles x 4<br/>
