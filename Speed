@@ -3,7 +3,7 @@ void setup(){
   pinMode(Left_p,OUTPUT);
   pinMode(Left_n,OUTPUT);
   pinMode(Right_p,OUTPUT);
-  pinMode(Right,n,OUTPUT);
+  pinMode(Right_n,OUTPUT);
   pinMode(A0,INPUT);
   pinMode(A1,INPUT);
   pinMode(A2,INPUT);
