@@ -1,0 +1,114 @@
+//including the libraries
+#include <AFMotor.h>
+
+//defining pins and variables for the IR Sensors
+#define left A0
+
+#define right A1
+
+//defining motors and assigning their ports in Motor Driver
+AF_DCMotor Motor_A(A, MOTOR12_1KHZ); 
+
+AF_DCMotor Motor_B(B, MOTOR12_1KHZ);
+
+AF_DCMotor Motor_C(C, MOTOR34_1KHZ);
+
+AF_DCMotor Motor_D(D, MOTOR34_1KHZ);
+
+void setup() {
+  //declaring pin types
+  pinMode(left,INPUT);
+  
+  pinMode(right,INPUT);
+  
+  //begin serial communication
+  Serial.begin(9600);
+  
+}
+
+void loop(){
+  //printing values of the sensors to the serial monitor
+  Serial.println(digitalRead(left));
+  
+  Serial.println(digitalRead(right));
+//will check if the line is detected by the right sessor of the motor.
+  else if(digitalRead(left)==0 && !analogRead(right)==0){
+    //turn left
+    Motor_A.run(FORWARD);
+    // calls to activate motor number A to run backwards.
+    
+    Motor_A.setSpeed(200);
+    
+    Motor_B.run(FORWARD);
+    // calls to activate motor number B to run backwards.
+    Motor_B.setSpeed(200);
+    // allows to set desired speed of the motor.
+    
+    Motor_C.run(BACKWARD);
+    // calls to activate motor number C to run backwards.
+    
+    Motor_C.setSpeed(200);
+    
+    Motor_D.run(BACKWARD);
+		// calls to activate motor number D to run backwards.
+    
+    Motor_D.setSpeed(200);
+
+    Motor_A.run(FORWARD);
+		// calls to activate motor number A to run forward.
+    
+    Motor_A.setSpeed(150);
+    
+    Motor_B.run(FORWARD);
+		// calls to activate motor number B to run forward.
+    
+    Motor_B.setSpeed(150);
+    
+    Motor_C.run(BACKWARD);
+		// calls to activate motor number C to run forward.
+    
+    Motor_C.setSpeed(150);
+    
+    Motor_D.run(BACKWARD);
+		// calls to activate motor number D to run forward.
+    
+    Motor_D.setSpeed(150);
+  }
+  //will check if the line is detected by the left sessor of the motor.
+  else if(!digitalRead(left)==0 && digitalRead(right)==0){
+    //turn right
+    Motor_A.run(BACKWARD);
+    // calls to acticate back motor.
+    
+    Motor_A.setSpeed(200);
+    // allows to set desired speed of the motor.
+    
+    Motor_B.run(BACKWARD);
+    
+    Motor_B.setSpeed(200);
+    
+    Motor_C.run(FORWARD);
+    
+    Motor_C.setSpeed(200);
+    
+    Motor_D.run(FORWARD);
+    
+    Motor_D.setSpeed(200);
+
+    Motor_A.run(BACKWARD);
+    
+    Motor_A.setSpeed(150);
+    
+    Motor_B.run(BACKWARD);
+    
+    Motor_B.setSpeed(150);
+    
+    Motor_C.run(FORWARD);
+    
+    Motor_C.setSpeed(150);
+    
+    Motor_D.run(FORWARD);
+    
+    Motor_D.setSpeed(150);
+   
+  }
