@@ -26,6 +26,8 @@ void setup() {
   
 }
 
+//Above code is jjust the libraries that were downloaded and edited with help of Nirmal.
+
 void loop(){
   //printing values of the sensors to the serial monitor
   Serial.println(digitalRead(left));
@@ -34,15 +36,18 @@ void loop(){
 //will check if the line is detected by the right sessor of the motor.
   else if(digitalRead(left)==0 && !analogRead(right)==0){
     //turn left
-    Motor_A.run(FORWARD);
-    // calls to activate motor number A to run backwards.
     
-    Motor_A.setSpeed(200);
-    
+    // *link and references used to help create code for this project *https://learn.adafruit.com/afmotor-library-reference*
+    // followed the same principle as listed in the link above
     Motor_B.run(FORWARD);
     // calls to activate motor number B to run backwards.
     Motor_B.setSpeed(200);
     // allows to set desired speed of the motor.
+    
+     Motor_A.run(FORWARD);
+    // calls to activate motor number A to run backwards.
+    
+    Motor_A.setSpeed(200);
     
     Motor_C.run(BACKWARD);
     // calls to activate motor number C to run backwards.
@@ -77,15 +82,16 @@ void loop(){
   //will check if the line is detected by the left sessor of the motor.
   else if(!digitalRead(left)==0 && digitalRead(right)==0){
     //turn right
+    
+    Motor_B.run(BACKWARD);
+    
+    Motor_B.setSpeed(200);
+    
     Motor_A.run(BACKWARD);
     // calls to acticate back motor.
     
     Motor_A.setSpeed(200);
     // allows to set desired speed of the motor.
-    
-    Motor_B.run(BACKWARD);
-    
-    Motor_B.setSpeed(200);
     
     Motor_C.run(FORWARD);
     
